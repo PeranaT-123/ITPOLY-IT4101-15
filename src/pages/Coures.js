@@ -1,16 +1,39 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const Coures = () => {
+const Courses = () => {
+  const { courseType } = useParams(); // ใช้ React Router params เพื่อดึงข้อมูลที่ส่งมา
+
+  const getPDFFile = () => {
+    switch (courseType) {
+      case 'vocational':
+        return '/PDF/vocational.pdf';
+      case 'diploma':
+        return '/PDF/diploma.pdf';
+      default:
+        return null;
+    }
+  };
+
+  const pdfFile = getPDFFile();
+
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Courses Offered</h2>
-      <p>We offer vocational and diploma programs tailored to IT expertise.</p>
-      <ul>
-        <li>Vocational Certificate (ปวช.)</li>
-        <li>Diploma (ปวส.)</li>
-      </ul>
+    <div style={{ padding: '20px' }}>
+      {pdfFile ? (
+        <object
+          data={pdfFile}
+          type="application/pdf"
+          width="100%"
+          height="600px"
+        >
+          <p>PDF cannot be displayed. Please download the PDF from the link below:</p>
+          <a href={pdfFile} target="_blank" rel="noopener noreferrer">Download PDF</a>
+        </object>
+      ) : (
+        <p>Course not found.</p>
+      )}
     </div>
   );
 };
 
-export default Coures
+export default Courses;

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header
       style={{
-        backgroundImage: 'url(/images/Background.jpg)',
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/Background.jpg"})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#fff',

@@ -19,8 +19,16 @@ const Navbar = () => {
           </span>
           {isDropdownVisible && (
             <ul style={{ position: 'absolute', top: '100%', left: 0, background: '#444', padding: '0.5rem', listStyle: 'none', margin: 0, boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-              <li><a href="/PDF/vocational.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', display: 'block', padding: '0.5rem' }}>ปวช</a></li>
-              <li><a href="/PDF/diploma.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', display: 'block', padding: '0.5rem' }}>ปวส</a></li>
+              <li>
+                <Link to="/courses/vocational" style={{ color: '#fff', textDecoration: 'none', display: 'block', padding: '0.5rem' }}>
+                  ปวช
+                </Link>
+              </li>
+              <li>
+                <Link to="/courses/diploma" style={{ color: '#fff', textDecoration: 'none', display: 'block', padding: '0.5rem' }}>
+                  ปวส
+                </Link>
+              </li>
             </ul>
           )}
         </li>

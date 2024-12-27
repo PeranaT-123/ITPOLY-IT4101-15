@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/PeranaT-123/ITPOLY-IT4101-15.git",
+  "homepage": "https://peranat-123.github.io/ITPOLY-IT4101-15/",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predepoly": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
